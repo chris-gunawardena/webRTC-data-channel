@@ -1,6 +1,6 @@
 var webRtcPeer;
 var mySignal;
-const v = window.location.hash;
+const v = window.location.hash.substr(1);
 const mqttClientId = Math.round(Math.random() * Math.pow(10, 10)).toString(16);
 var mqttClient = mqtt.connect("wss://test.mosquitto.org:8081", {clientId: mqttClientId,
                                                                 will: {
