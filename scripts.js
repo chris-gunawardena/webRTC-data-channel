@@ -59,6 +59,8 @@ function startWebRtcPeer(_initiator) {
   });
   webRtcPeer.on("connect", () => {
     console.log("CONNECT");
+    document.getElementById('a').innerHTML = 'Connected. Open https://chris-gunawardena.github.io/webRTC-data-channel/#' + v + ' in another browser or window';
+    document.getElementById('a').href = 'https://chris-gunawardena.github.io/webRTC-data-channel/#' + v;
     webRtcPeer.send("whatever" + Math.random());
   });
   webRtcPeer.on("data", data => document.querySelector('textarea').value = data); 
